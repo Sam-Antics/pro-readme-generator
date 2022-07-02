@@ -99,7 +99,17 @@ const inquirer = require('inquirer');
       message: 'Which license is this application covered under?',
       choices: ['MIT', 'GNU GPLv3', 'Mozilla', 'IBM', 'Apache 2.0', 'Unlicense'] 
     }
-  ]);
+  ])
+  .then (data => {
+    const writeFile = `${data.name
+      .toLowerCase()
+      .split(' ')
+      .join('')}.json`;
+
+    fs.writeFile(writeFile, JSON.stringify(data, null, '/t'), err =>
+      err ? console.log(err) : console.log('Data written to JSON.')
+    );
+  });
 
 
 // // TODO: Create a function to write README file
