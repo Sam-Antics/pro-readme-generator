@@ -1,6 +1,6 @@
 # Pro Readme Generator
   
-  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+  ![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)
     
 
 ## Table of Contents
@@ -27,15 +27,19 @@ This is is how you use it... (background singers) This is how you use it. Sha-la
   ## License
    This project is covered under the following:</br>
    
-  [License: MIT](https://opensource.org/licenses/MIT)
+  [License: Unlicense](http://unlicense.org/)
     
     
 
 ## Contributing
-You can contribute by doing the following ...
+
+  You can contribute by doing the following ...
+    
 
 ## Tests
-undefined
+
+  There are no instructions for testing at this time.
+  
 
 ## Questions
 If you have questions or comments, I can be reached at the following:</br>

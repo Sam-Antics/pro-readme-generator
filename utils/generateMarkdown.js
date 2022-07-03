@@ -87,6 +87,31 @@ function licenseToc(license) {
   }
 }
 
+/* Functions to return stock informaiton in README if user doesn't want contributors, 
+ or if they have no testing instructions */
+function contributeSection(confirmContribute, contribute) {
+  if (!confirmContribute) {
+    return `
+  This project is not accepting third-party contributions at this time. Thank you for your interest.
+  `;
+  } else {
+    return `
+  ${contribute}
+    `;
+  }
+}
+
+function testSection(confirmTest, test) {
+  if (!confirmTest) {
+    return `
+  There are no instructions for testing at this time.
+  `;
+  } else {
+    return `
+  ${test}
+    `;
+  }
+}
 
 // Function to generate markdown for README
 function generateMd(mockData) {
@@ -114,10 +139,10 @@ ${mockData.usage}
 ${renderLicenseSection(mockData.license)}
 
 ## Contributing
-${mockData.contribute}
+${contributeSection(mockData.confirmContribute, mockData.contribute)}
 
 ## Tests
-${mockData.test}
+${testSection(mockData.confirmTest, mockData.test)}
 
 ## Questions
 If you have questions or comments, I can be reached at the following:</br>

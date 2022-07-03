@@ -119,7 +119,7 @@ const mockData = {
 	contribute: "You can contribute by doing the following ...",
 	confirmTest: false,
 	license: [
-		"MIT"
+		"Unlicense"
 	]
 };
 
