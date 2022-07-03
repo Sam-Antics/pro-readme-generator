@@ -21,6 +21,11 @@ const inquirer = require('inquirer');
     },
     {
       type: 'input',
+      name: 'email',
+      message: 'What is your email address?'
+    },
+    {
+      type: 'input',
       name: 'title',
       message: 'Please input the title for this project. (Required)',
       validate: titleInput => {
@@ -100,13 +105,15 @@ const inquirer = require('inquirer');
       choices: ['MIT', 'GNU GPLv3', 'Mozilla', 'IBM', 'Apache 2.0', 'Unlicense'] 
     }
   ])
+  // this writes the data to a JSON object so that I can use it as a mock to begin building the README template
+  // ... without having to go through and answer all the prompts over and over.
   .then (data => {
     const writeFile = `${data.name
       .toLowerCase()
       .split(' ')
       .join('')}.json`;
 
-    fs.writeFile(writeFile, JSON.stringify(data, null, '/t'), err =>
+    fs.writeFile(writeFile, JSON.stringify(data, null, '\t'), err =>
       err ? console.log(err) : console.log('Data written to JSON.')
     );
   });

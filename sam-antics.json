@@ -1,0 +1,16 @@
+{
+	"name": "sam-antics",
+	"email": "sam@this-aint-it.com",
+	"title": "Pro Readme Generator",
+	"description": "This is a command-line application that creates a high-quality README.md file from user input.",
+	"confirmInstall": true,
+	"install": "This is the step-by-step process for installing this application ...",
+	"confirmUsage": true,
+	"usage": "is is how you use it, Sha-la-la-la-la-la-la, (backThis is how you use it ... (background singers) Thground singers) This is how you use it...",
+	"confirmContribute": true,
+	"contribute": "You can contribut by doing the following ...",
+	"confirmTest": false,
+	"license": [
+		"MIT"
+	]
+}
