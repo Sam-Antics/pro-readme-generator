@@ -62,9 +62,31 @@ function renderLicenseLink(license) {
   }
 }
 
-// // TODO: Create a function that returns the license section of README
-// // If there is no license, return an empty string
-// function renderLicenseSection(license) {}
+// Function that returns the license section of README
+function renderLicenseSection(license) {
+  // If there is no license, return an empty string
+  if (license == '') {
+    return '';
+    } else {
+    return `
+  ## License
+   This project is covered under the following:</br>
+   ${renderLicenseLink(license)}
+    `;
+  }
+}
+
+// If there is no license information, no ToC link for the missing section
+function licenseToc(license) {
+  if (license == '') {
+    return '';
+  } else {
+    return `
+- [License Information](#license)
+    `;
+  }
+}
+
 
 // Function to generate markdown for README
 function generateMd(mockData) {
@@ -72,13 +94,13 @@ function generateMd(mockData) {
   ${renderLicenseBadge(mockData.license)}
 
 ## Table of Contents
-1. [Project Description](#description)
-2. [Installation Instructions](#installation)
-3. [Usage Instructions](#usage)
-4. [License Information](#license)
-5. [Contributing](#contributing)
-6. [Testing Information](#tests)
-7. [Questions and Contact Info](#questions)
+- [Project Description](#description)
+- [Installation Instructions](#installation)
+- [Usage Instructions](#usage)
+${licenseToc(mockData.license)}
+- [Contributing](#contributing)
+- [Testing Information](#tests)
+- [Questions and Contact Info](#questions)
      
 ## Description
 ${mockData.description}
@@ -89,9 +111,7 @@ ${mockData.install}
 ## Usage
 ${mockData.usage}
 
-## License
-This project is covered under the following:</br>
-${renderLicenseLink(mockData.license)}
+${renderLicenseSection(mockData.license)}
 
 ## Contributing
 ${mockData.contribute}
@@ -100,7 +120,7 @@ ${mockData.contribute}
 ${mockData.test}
 
 ## Questions
-If you have questions or comments, I can be reached in the following manner:</br>
+If you have questions or comments, I can be reached at the following:</br>
 - [GitHub Profle](https://github.com/${mockData.name}) </br>
 - [email](${mockData.email})
 
