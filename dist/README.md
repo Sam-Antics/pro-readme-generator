@@ -1,5 +1,7 @@
 # Pro Readme Generator
   
+  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+    
 
 ## Table of Contents
 1. [Project Description](#description)
@@ -20,6 +22,10 @@ This is the step-by-step process for installing this application ...
 This is is how you use it... (background singers) This is how you use it. Sha-la-la-la-la-la-la, (background singers) This is how you use it ...
 
 ## License
+This project is covered under the following:</br>
+
+  [License: MIT](https://opensource.org/licenses/MIT)
+    
 
 ## Contributing
 You can contribute by doing the following ...

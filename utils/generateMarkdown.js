@@ -24,15 +24,43 @@ function renderLicenseBadge(license) {
     return `
   ![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)
     `;
+    // If there is no license, return an empty string
   } else {
-    return ''
-  };
+    return '';
+  }
 }
-// If there is no license, return an empty string
 
-// // TODO: Create a function that returns the license link
-// // If there is no license, return an empty string
-// function renderLicenseLink(license) {}
+// Function that returns the license link
+function renderLicenseLink(license) {
+  if (license == 'MIT') {
+    return `
+  [License: MIT](https://opensource.org/licenses/MIT)
+    `;
+  } else if (license == 'GNU GPLv3') {
+    return `
+  [License: GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0)
+    `;
+  } else if (license == 'Mozilla') {
+    return `
+  [License: Mozilla](https://opensource.org/licenses/MPL-2.0)
+    `;
+  } else if (license == 'IBM') {
+    return `
+  [License: IBM](https://opensource.org/licenses/IPL-1.0)
+    `;
+  } else if (license == 'Apache 2.0') {
+    return `
+  [License: Apache 2.0](https://opensource.org/licenses/Apache-2.0)
+    `;
+  } else if (license == 'Unlicense') {
+    return `
+  [License: Unlicense](http://unlicense.org/)
+    `;
+  } else {
+    // If there is no license, return an empty string
+    return '';
+  }
+}
 
 // // TODO: Create a function that returns the license section of README
 // // If there is no license, return an empty string
@@ -62,6 +90,8 @@ ${mockData.install}
 ${mockData.usage}
 
 ## License
+This project is covered under the following:</br>
+${renderLicenseLink(mockData.license)}
 
 ## Contributing
 ${mockData.contribute}
