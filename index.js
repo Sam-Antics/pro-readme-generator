@@ -114,7 +114,7 @@ const mockData = {
 	confirmInstall: true,
 	install: "This is the step-by-step process for installing this application ...",
 	confirmUsage: true,
-	usage: "is is how you use it, Sha-la-la-la-la-la-la, (background singers) This is how you use it ... (background singers) Thground singers) This is how you use it...",
+	usage: "This is is how you use it... (background singers) This is how you use it. Sha-la-la-la-la-la-la, (background singers) This is how you use it ...",
 	confirmContribute: true,
 	contribute: "You can contribute by doing the following ...",
 	confirmTest: false,

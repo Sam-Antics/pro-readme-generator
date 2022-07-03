@@ -24,18 +24,28 @@ function generateMd(mockData) {
 7. [Questions and Contact Info](#questions)
      
 ## Description
+${mockData.description}
 
 ## Installation
+${mockData.install}
 
 ## Usage
+${mockData.usage}
 
 ## License
 
+
 ## Contributing
+${mockData.contribute}
 
 ## Tests
+${mockData.test}
 
 ## Questions
+If you have questions or comments, I can be reached in the following manner:</br>
+- [GitHub Profle](https://github.com/${mockData.name}) </br>
+- [email](${mockData.email})
+
 `;
 }
 
