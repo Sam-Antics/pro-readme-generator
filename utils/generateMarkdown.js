@@ -1,6 +1,34 @@
-// // TODO: Create a function that returns a license badge based on which license is passed in
-// // If there is no license, return an empty string
-// function renderLicenseBadge(license) {}
+// Function that returns a license badge based on which license is passed in
+function renderLicenseBadge(license) {
+  if (license == 'MIT') {
+    return `
+  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+    `;
+  } else if (license == 'GNU GPLv3') {
+    return `
+  ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
+    `;
+  } else if (license == 'Mozilla') {
+    return `
+  ![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)
+    `;
+  } else if (license == 'IBM') {
+    return `
+  ![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)
+    `;
+  } else if (license == 'Apache 2.0') {
+    return `
+  ![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
+    `;
+  } else if (license == 'Unlicense') {
+    return `
+  ![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)
+    `;
+  } else {
+    return ''
+  };
+}
+// If there is no license, return an empty string
 
 // // TODO: Create a function that returns the license link
 // // If there is no license, return an empty string
@@ -13,6 +41,7 @@
 // Function to generate markdown for README
 function generateMd(mockData) {
   return `# ${mockData.title}
+  ${renderLicenseBadge(mockData.license)}
 
 ## Table of Contents
 1. [Project Description](#description)
@@ -33,7 +62,6 @@ ${mockData.install}
 ${mockData.usage}
 
 ## License
-
 
 ## Contributing
 ${mockData.contribute}

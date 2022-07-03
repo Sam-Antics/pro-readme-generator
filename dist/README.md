@@ -1,4 +1,5 @@
 # Pro Readme Generator
+  
 
 ## Table of Contents
 1. [Project Description](#description)
@@ -20,7 +21,6 @@ This is is how you use it... (background singers) This is how you use it. Sha-la
 
 ## License
 
-
 ## Contributing
 You can contribute by doing the following ...
 
@@ -29,6 +29,6 @@ undefined
 
 ## Questions
 If you have questions or comments, I can be reached in the following manner:</br>
-[GitHub Profle](https://github.com/sam-antics) </br>
-[email](sam@this-aint-it.com)
+- [GitHub Profle](https://github.com/sam-antics) </br>
+- [email](sam@this-aint-it.com)
 
