@@ -114,40 +114,40 @@ function testSection(confirmTest, test) {
 }
 
 // Function to generate markdown for README
-function generateMd(mockData) {
-  return `# ${mockData.title}
-  ${renderLicenseBadge(mockData.license)}
+function generateMd(data) {
+  return `# ${data.title}
+  ${renderLicenseBadge(data.license)}
 
 ## Table of Contents
 - [Project Description](#description)
 - [Installation Instructions](#installation)
 - [Usage Instructions](#usage)
-${licenseToc(mockData.license)}
+${licenseToc(data.license)}
 - [Contributing](#contributing)
 - [Testing Information](#tests)
 - [Questions and Contact Info](#questions)
      
 ## Description
-${mockData.description}
+${data.description}
 
 ## Installation
-${mockData.install}
+${data.install}
 
 ## Usage
-${mockData.usage}
+${data.usage}
 
-${renderLicenseSection(mockData.license)}
+${renderLicenseSection(data.license)}
 
 ## Contributing
-${contributeSection(mockData.confirmContribute, mockData.contribute)}
+${contributeSection(data.confirmContribute, data.contribute)}
 
 ## Tests
-${testSection(mockData.confirmTest, mockData.test)}
+${testSection(data.confirmTest, data.test)}
 
 ## Questions
 If you have questions or comments, I can be reached at the following:</br>
-- [GitHub Profle](https://github.com/${mockData.name}) </br>
-- [email](${mockData.email})
+- [GitHub Profle](https://github.com/${data.name}) </br>
+- [email](${data.email})
 
 `;
 }

@@ -4,130 +4,130 @@ const inquirer = require('inquirer');
 const generateMd = require('./utils/generateMarkdown.js');
 
 // Array of questions for user input
-//  inquirer
-//    .prompt([
-//     {
-//       type: 'input',
-//       name: 'name',
-//       message: 'What is your GitHub username? (Required)',
-//       validate: userInput => {
-//         if (userInput) {
-//           return true;
-//         } else {
-//           console.log('Please enter your GitHub username.');
-//           return false;
-//         }
-//       }
-//     },
-//     {
-//       type: 'input',
-//       name: 'email',
-//       message: 'What is your email address?'
-//     },
-//     {
-//       type: 'input',
-//       name: 'title',
-//       message: 'Please input the title for this project. (Required)',
-//       validate: titleInput => {
-//         if (titleInput) {
-//           return true;
-//         } else {
-//           console.log('The README requires a project title.');
-//           return false;
-//         }
-//       }
-//     },
-//     {
-//       type: 'input',
-//       name: 'description',
-//       message: 'Please provide a brief description for this project. (Required)',
-//       validate: projectBrief => {
-//         if (projectBrief) {
-//           return true;
-//         } else {
-//           console.log('The README requires a brief description.');
-//           return false;
-//         }
-//       }
-//     },
-//     {
-//       type: 'confirm',
-//       name: 'confirmInstall',
-//       message: 'Does this project require installation by the user?',
-//       default: true
-//     },
-//     {
-//       type: 'input',
-//       name: 'install',
-//       message: 'Please providethe steps required to install your project.',
-//       when: ({ confirmInstall }) => confirmInstall
-//     },
-//     {
-//       type: 'confirm',
-//       name: 'confirmUsage',
-//       message: 'Do you have instructions for use of this project?',
-//       default: true
-//     },
-//     {
-//       type: 'input',
-//       name: 'usage',
-//       message: 'Please provide instructions for use.',
-//       when: ({ confirmUsage }) => confirmUsage
-//     },
-//     {
-//       type: 'confirm',
-//       name: 'confirmContribute',
-//       message: 'Do you have instructions for potential contributors?',
-//       default: true
-//     },
-//     {
-//       type: 'input',
-//       name: 'contribute',
-//       message: 'Please provide contribution guidelines.',
-//       when: ({ confirmContribute }) => confirmContribute
-//     },
-//     {
-//       type: 'confirm',
-//       name: 'confirmTest',
-//       message: 'Do you have instructions for testing of this project?',
-//       default: true
-//     },
-//     {
-//       type: 'input',
-//       name: 'test',
-//       message: 'Please provide instructions for testing.',
-//       when: ({ confirmTest }) => confirmTest
-//     },
-//     {
-//       type: 'checkbox',
-//       name: 'license',
-//       message: 'Which license is this application covered under?',
-//       choices: ['MIT', 'GNU GPLv3', 'Mozilla', 'IBM', 'Apache 2.0', 'Unlicense'] 
-//     }
-//   ]);
+ inquirer
+   .prompt([
+    {
+      type: 'input',
+      name: 'name',
+      message: 'What is your GitHub username? (Required)',
+      validate: userInput => {
+        if (userInput) {
+          return true;
+        } else {
+          console.log('Please enter your GitHub username.');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: 'What is your email address? (Required)',
+      validate: userEmail => {
+        if (userEmail) {
+          return true;
+        } else {
+          console.log('Please enter a contact email.');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'title',
+      message: 'Please input the title for this project. (Required)',
+      validate: titleInput => {
+        if (titleInput) {
+          return true;
+        } else {
+          console.log('The README requires a project title.');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'description',
+      message: 'Please provide a brief description for this project. (Required)',
+      validate: projectBrief => {
+        if (projectBrief) {
+          return true;
+        } else {
+          console.log('The README requires a brief description.');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'install',
+      message: 'Please provide the steps required to install your project. (Required)',
+      validate: projectInstall => {
+        if (projectInstall) {
+          return true;
+        } else {
+          console.log('The README requires installation instructions.');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'usage',
+      message: 'Please provide instructions and examples for use.',
+      validate: projectUsage => {
+        if (projectUsage) {
+          return true;
+        } else {
+          console.log('The README requires usage information.');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'confirm',
+      name: 'confirmContribute',
+      message: 'Do you have instructions for potential contributors?',
+      default: true
+    },
+    {
+      type: 'input',
+      name: 'contribute',
+      message: 'Please provide contribution guidelines.',
+      when: ({ confirmContribute }) => confirmContribute
+    },
+    {
+      type: 'confirm',
+      name: 'confirmTest',
+      message: 'Do you have instructions for testing of this project?',
+      default: true
+    },
+    {
+      type: 'input',
+      name: 'test',
+      message: 'Please provide instructions for testing.',
+      when: ({ confirmTest }) => confirmTest
+    },
+    {
+      type: 'list',
+      name: 'license',
+      message: 'Which license is this application covered under?',
+      choices: ['MIT', 'GNU GPLv3', 'Mozilla', 'IBM', 'Apache 2.0', 'Unlicense'] 
+    }
+  ])
+  // back to writing a JSON object because I've changed some of the prompts
+  .then (data => {
+    const writeFile = `${data.name
+      .toLowerCase()
+      .split(' ')
+      .join('')}.json`
 
-const mockData = {
-	name: "sam-antics",
-	email: "sam@this-aint-it.com",
-	title: "Pro Readme Generator",
-	description: "This is a command-line application that creates a high-quality README.md file from user input.",
-	confirmInstall: true,
-	install: "This is the step-by-step process for installing this application ...",
-	confirmUsage: true,
-	usage: "This is is how you use it... (background singers) This is how you use it. Sha-la-la-la-la-la-la, (background singers) This is how you use it ...",
-	confirmContribute: true,
-	contribute: "You can contribute by doing the following ...",
-	confirmTest: false,
-	license: [
-		"Unlicense"
-	]
-};
+      fs.writeFile(writeFile, JSON.stringify(data, null, '\t'), err =>
+        err ? console.log(err) : console.log('Data written to JSON.')
+        );
+    });
 
-// placeholdere write file function while I get the README built
-const writeFile = generateMd(mockData);
-  fs.writeFile('./dist/README.md', writeFile, err => {
-    if (err) throw new Error(err);
-  });
+
 
 // // Function to write README file
 // const writeFile = fileContent => {
