@@ -3,9 +3,9 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMd = require('./utils/generateMarkdown.js');
 
-// Array of questions for user input
- inquirer
-   .prompt([
+// Array of questions for user input, initialized by function Init()
+const init = () => {
+  return inquirer.prompt([
     {
       type: 'input',
       name: 'name',
@@ -115,42 +115,45 @@ const generateMd = require('./utils/generateMarkdown.js');
       choices: ['MIT', 'GNU GPLv3', 'Mozilla', 'IBM', 'Apache 2.0', 'Unlicense'] 
     }
   ])
-  // back to writing a JSON object because I've changed some of the prompts
-  .then (data => {
-    const writeFile = `${data.name
-      .toLowerCase()
-      .split(' ')
-      .join('')}.json`
-
-      fs.writeFile(writeFile, JSON.stringify(data, null, '\t'), err =>
-        err ? console.log(err) : console.log('Data written to JSON.')
-        );
-    });
+  .then(mdData => {
+    return mdData;
+  });
+};
 
 
 
-// // Function to write README file
-// const writeFile = fileContent => {
-//   return new Promise((resolve, reject) => {
-//     fs.writeFile('./dist/index.html', fileContent, err => {
-//       // if there's an error, reject the Promise and send the error to the Promise's 'catch()' method
-//       if (err) {
-//         reject(err);
-//         // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
-//         return;
-//        }
+// Function to write README file
+const writeFile = fileContent => {
+  return new Promise((resolve, reject) => {
+    fs.writeFile('./dist/README.md', fileContent, err => {
+      // if there's an error, reject the Promise and send the error to the Promise's 'catch()' method
+      if (err) {
+        reject(err);
+        // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
+        return;
+       }
 
-//       // if everything went well, resolve the Promise and send the successful data to the '.then()' method
-//         resolve({
-//             ok: true,
-//             message: 'Your README file has been created.'
-//        });
-//     }); 
-//   });
-// };
+      // if everything went well, resolve the Promise and send the successful data to the '.then()' method
+        resolve({
+            ok: true,
+            message: 'Your README file has been created.'
+       });
+    }); 
+  });
+};
 
-// // TODO: Create a function to initialize app
-// function init() {}
 
 // Function call to initialize app
-// init();
+init()
+.then(mdData => {
+  return generateMd(mdData);
+})
+.then(markdownFile => {
+  return writeFile(markdownFile)
+})
+.then(writeFileResponse => {
+  console.log(writeFileResponse.message);
+})
+.catch(err => {
+  console.log(err);
+});
