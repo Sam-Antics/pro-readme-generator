@@ -1,6 +1,6 @@
 # Pro README Generator
   
-  ![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)
+  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
     
 
 ## Table of Contents
@@ -15,25 +15,25 @@
 - [Questions and Contact Info](#questions)
      
 ## Description
-This is a command-line application which writes a high-quality README.md file based on user's answers to prompts.
+This is a command-line application which generates a high-quality README.md file based on input from user's answers to prompts.
 
 ## Installation
-These are step-by-step instructions for installing this application...
+These are the step-by-step instructions for installing this application ...
 
 ## Usage
-You can use this application to create your README.md file without having to format it. This application will plug your prompt answers into the README template so that you can devote more time to working on the project itself. **Place screenshot here**
+You can use this application to quickly generate a README file without having to format it. Simply answer the command-line prompts and the application will do the work for you.
 
 
   ## License
    This project is covered under the following:</br>
    
-  [License: Unlicense](http://unlicense.org/)
+  [License: MIT](https://opensource.org/licenses/MIT)
     
     
 
 ## Contributing
 
-  If you want to contribute to this project, do the following...
+  If you would like to contribute to this project, you can do the following...
     
 
 ## Tests

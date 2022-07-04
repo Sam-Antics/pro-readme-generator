@@ -147,7 +147,7 @@ ${testSection(data.confirmTest, data.test)}
 ## Questions
 If you have questions or comments, I can be reached at the following:</br>
 - [GitHub Profle](https://github.com/${data.name}) </br>
-- [email](${data.email})
+- [Email](${data.email})
 
 `;
 }

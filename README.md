@@ -4,13 +4,12 @@
 ## Table of Contents
 1. [Project Description](#project-description)
 2. [Usage](#usage)
-3. [Deployed Application Demo](#deployed-application-demonstration)
-4. [Built With](#built-with)
-5. [Author](#author)
-6. [Other Contributors](#other-contributors)
+3. [Built With](#built-with)
+4. [Author](#author)
+5. [Other Contributors](#other-contributors)
 
 ## Project Description
-A command-line application which builds a README.md document based on user input
+A command-line application which builds a README.md document based on user responses to prompts.
 ### User Story
 ```
 AS A developer
@@ -36,9 +35,8 @@ WHEN I click on the links in the Table of Contents
 THEN I am taken to the corresponding section of the README
 ```
 ## Usage
-
-## Deployed Application Demonstration
-![Deployed application](#)
+### Deployed Application Demonstration
+![Deployed application](./utils/shortened-demo.gif)
 
 ## Built With
 * JavaScript
