@@ -39,7 +39,6 @@ THEN I am taken to the corresponding section of the README
 ![Deployed application](./utils/shortened-demo.gif)
 
 ## Built With
-* JavaScript
 * Node.js
 * npm Inquirer package
 
