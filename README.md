@@ -43,6 +43,7 @@ THEN I am taken to the corresponding section of the README
 ## Built With
 * JavaScript
 * Node.js
+* npm Inquirer package
 
 ## Author
 **Samantha Guerra**
